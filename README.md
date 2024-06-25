@@ -1,4 +1,4 @@
-# This file is a research done Predictive Modeling on Heart Disease Data
+# Predictive Modeling on Heart Disease Data
 This R script performs predictive modeling on heart disease data using various machine learning techniques. Below is a breakdown of the key sections and their functionalities:
 
 1.Data Preparation and Initial Analysis
