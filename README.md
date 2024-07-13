@@ -1,37 +1,60 @@
-# Predictive Modeling on Heart Disease Data
-This R script performs predictive modeling on heart disease data using various machine learning techniques. Below is a breakdown of the key sections and their functionalities:
+# Heart Disease Analysis with R
 
-1.Data Preparation and Initial Analysis
+This repository contains R scripts for analyzing a heart disease dataset (`HEART2.CSV`) using various statistical and machine learning techniques. The dataset includes information such as age, sex, cholesterol levels, and whether the individual has heart disease.
 
-Loads necessary packages (ISLR, dplyr, ggplot2).
-Reads the heart disease dataset (HEART2.CSV).
-Performs exploratory data analysis (EDA) with str() and barplot() functions.
-Preprocesses the target variable (tgt) for logistic regression.
-2.Logistic Regression
+## Dataset Description
 
-Fits a logistic regression model (glm) to predict heart disease (tgt) based on age, sex, and cholesterol (chol).
-Calculates and interprets logistic regression coefficients (summary(glm1)).
-Computes probabilities (P45, P55) of heart disease for specific age, sex, and cholesterol values.
-Makes predictions (glm.pred) and evaluates model accuracy using a confusion matrix.
-3.Linear Discriminant Analysis (LDA)
+The dataset (`HEART2.CSV`) consists of the following columns:
 
-Splits the data into training and test sets (train, H.train, H.test).
-Uses Linear Discriminant Analysis (lda) to classify heart disease presence (tgt2) based on age, sex, and cholesterol.
-Evaluates LDA model performance with predictions (lda.pred) and a confusion matrix.
-4.Quadratic Discriminant Analysis (QDA)
+- `age`: Age of the individual
+- `sex`: Gender of the individual (1 = male, 0 = female)
+- `chol`: Cholesterol level
+- `target`: Whether the individual has heart disease ("yes" or "no")
 
-Applies Quadratic Discriminant Analysis (qda) to predict heart disease presence.
-Assesses QDA model accuracy using predictions and a confusion matrix.
-5.K-Nearest Neighbors (KNN)
+## Scripts and Analyses
 
-Utilizes K-Nearest Neighbors (knn) for classification.
-Computes predictions (knn.pred) based on nearest neighbors and evaluates accuracy with a confusion matrix.
-6.Cross-Validation and Error Metrics
+### 1. Data Exploration and Preprocessing
 
-Implements cross-validation using caret package (createDataPartition).
-Defines an error metric function (err_metric) to calculate precision, recall, F1 score, and accuracy from confusion matrices.
-7.Logistic Regression (Advanced)
+- **Data Loading**: The dataset is loaded using `read.table` and explored using `str()` to understand its structure.
+- **Exploratory Data Analysis**: Bar plots are created to visualize the distribution of the `target` and `sex` variables.
 
-Performs logistic regression (logit_m) on training data (train_data).
-Predicts heart disease using test data and evaluates predictions with a confusion matrix and error metrics.
-Plots an ROC curve (roc_score) to assess model performance.
+### 2. Logistic Regression Model
+
+- **Model Training**: A logistic regression model (`glm`) is trained to predict the probability of heart disease based on age, sex, and cholesterol levels.
+- **Model Evaluation**: The model's performance is evaluated using summary statistics and predictions are made for specific age and sex scenarios.
+
+### 3. Classification Models
+
+- **Linear Discriminant Analysis (LDA)**: LDA is applied to classify individuals into heart disease categories.
+- **Quadratic Discriminant Analysis (QDA)**: QDA is used as an alternative classification method.
+- **K-Nearest Neighbors (KNN)**: KNN classification is performed using `knn` from the `caret` package.
+
+### 4. Error Metrics and Evaluation
+
+- **Confusion Matrix**: Error metrics such as precision, recall, false positive rate, false negative rate, and F1 score are calculated using a custom function (`err_metric`).
+- **ROC Curve**: The ROC curve is plotted using the `pROC` package to visualize the performance of the logistic regression model.
+
+### 5. Data Partitioning and Validation
+
+- **Data Partitioning**: The dataset is split into training and testing sets using `createDataPartition` from the `caret` package.
+- **Validation**: Models are trained on the training set and validated on the testing set to assess their generalization ability.
+
+## Requirements
+
+- R (version 3.5 or higher)
+- R packages: `ISLR`, `dplyr`, `MASS`, `caret`, `pROC`
+
+## Usage
+
+1. Ensure R and the required packages are installed.
+2. Download or clone this repository.
+3. Place your `HEART2.CSV` dataset in the root directory.
+4. Run the R scripts in sequence to analyze the heart disease dataset.
+
+## Authors
+
+- [Your Name] - [Your Email]
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
