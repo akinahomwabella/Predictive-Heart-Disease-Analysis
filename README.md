@@ -53,7 +53,7 @@ The dataset (`HEART2.CSV`) consists of the following columns:
 
 ## Authors
 
-- [Your Name] - [Your Email]
+- Akinahom Wabella - akinahom.wabella@mnsu.edu
 
 ## License
 
